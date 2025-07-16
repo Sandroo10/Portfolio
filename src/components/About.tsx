@@ -28,11 +28,11 @@ const About = () => {
           <p className="text-xl text-muted-foreground">Quick Introduction</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 sm:h-[560px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:h-[560px]">
           <Timeline />
           <div>
             <div className="prose prose-lg max-w-none mb-10">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="sm:text-lg text-muted-foreground leading-relaxed">
                 I'm a passionate developer specializing in React, JavaScript, .NET, and building great user experiences. 
                 I enjoy solving problems and turning ideas into reality. My work ranges from web apps to creative UIs, 
                 always focusing on clean code and modern design principles. I also hold certifications from 
@@ -81,7 +81,7 @@ const About = () => {
                   key={index}
                   className="bg-background p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border bordernew"
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex sm:flex-row flex-col items-center space-x-4">
                     <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg text-white">
                       <stat.icon size={24} />
                     </div>

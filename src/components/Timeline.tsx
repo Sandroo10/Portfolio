@@ -52,7 +52,7 @@ const TimelineItem = ({
   date: string;
 }) => (
   <div className="flex items-start relative">
-    <div className="flex flex-col items-center mr-6">
+    <div className="flex flex-col items-center mr-6 mt-5">
       <div className="w-3 h-3 bg-blue-500 rounded-full mt-1" />
       <div className="h-full w-px bg-blue-300" />
     </div>

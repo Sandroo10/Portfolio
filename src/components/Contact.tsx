@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { Mail, MapPin, Send } from 'lucide-react'
 import { toast } from 'sonner'
 
 const formSchema = z.object({
@@ -72,11 +72,11 @@ const Contact = () => {
           <p className="text-xl text-muted-foreground">Let's work together</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <h3 className="sm:text-2xl text-xl font-bold text-foreground mb-6">Get in Touch</h3>
+              <p className="sm:text-lg text-muted-foreground mb-8 leading-relaxed">
                 I'm always interested in new opportunities and exciting projects.
                 Whether you have a question or just want to say hi, feel free to reach out!
               </p>
@@ -86,7 +86,6 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <a
                   key={index}
-                  href={info.href}
                   className="flex items-center space-x-4 p-4 bg-background border bordernew rounded-xl hover:border-blue-600 hover:shadow-lg transition-all duration-300 group"
                 >
                   <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg text-white group-hover:scale-110 transition-transform duration-300">
@@ -94,7 +93,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">{info.label}</p>
-                    <p className="text-lg font-semibold text-foreground group-hover:text-blue-600 transition-colors duration-300">
+                    <p className="sm:text-lg text-[80%] font-semibold text-foreground group-hover:text-blue-600 transition-colors duration-300">
                       {info.value}
                     </p>
                   </div>
