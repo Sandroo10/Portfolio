@@ -6,12 +6,13 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeProvider';
+import { Toaster } from './components/ui/sonner';
 
 function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <div className="min-h-screen bg-background text-foreground transition-colors duration-300 overflow-x-hidden">
         <Header />
         <Hero />
         <About />
@@ -19,6 +20,7 @@ function App() {
         <Projects />
         <Contact />
         <Footer />
+        <Toaster position="bottom-center" richColors />
       </div>
     </ThemeProvider>
   )

@@ -1,20 +1,13 @@
-import { useState, useEffect } from 'react';
-import { Github, Linkedin, Instagram, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, ArrowDown } from 'lucide-react';
+import MyPic from "../../public/Me.jpg"
+import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
-  const [currentRole, setCurrentRole] = useState(0);
   const roles = [
     "Full Stack Developer",
     "React & .NET Specialist", 
     "Frontend Artist"
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -30,7 +23,7 @@ const Hero = () => {
           
           <div className="hidden lg:flex flex-col space-y-6">
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/sandro-saralidze-04430532a/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 hover:scale-110"
@@ -38,21 +31,14 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a 
-              href="https://github.com" 
+              href="https://github.com/Sandroo10" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-900 transition-all duration-300 hover:scale-110"
             >
               <Github size={24} />
             </a>
-            <a 
-              href="https://instagram.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300 hover:scale-110"
-            >
-              <Instagram size={24} />
-            </a>
+            
           </div>
 
           <div className="text-center lg:text-left lg:flex-1 lg:ml-12">
@@ -60,14 +46,22 @@ const Hero = () => {
               <h1 className="text-5xl lg:text-7xl font-bold mb-4">
                 <span className="text-gray-600 dark:text-gray-400 text-2xl lg:text-3xl block mb-2">Hi, I'm</span>
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
-                  Diamond
+                  Sandro
                 </span>
               </h1>
               
               <div className="h-20 mb-6">
                 <h2 className="text-2xl lg:text-4xl font-semibold text-foreground">
-                  <span className="inline-block min-w-0 transition-all duration-500">
-                    {roles[currentRole]}
+                  <span className="inline-block min-w-0">
+                    <Typewriter
+                      words={roles}
+                      loop={0} 
+                      cursor
+                      cursorStyle="|"
+                      typeSpeed={100}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                    />
                   </span>
                 </h2>
               </div>
@@ -102,14 +96,7 @@ const Hero = () => {
                   >
                     <Github size={20} />
                   </a>
-                  <a 
-                    href="https://instagram.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
-                  >
-                    <Instagram size={20} />
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -133,7 +120,7 @@ const Hero = () => {
                   />
                 </svg>
                 <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-white text-6xl font-bold">
-                  DS
+                  <img src={MyPic} className='rounded-full h-68 '/>
                 </div>
               </div>
             </div>

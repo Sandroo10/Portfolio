@@ -1,55 +1,64 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
-import { useToast } from '../hooks/useToast';
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { toast } from 'sonner'
+
+const formSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Invalid email address'),
+  message: z.string().min(1, 'Message is required'),
+})
+
+type ContactFormValues = z.infer<typeof formSchema>
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(formSchema),
+  })
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const onSubmit = async (data: ContactFormValues) => {
+    try {
+      const response = await fetch('https://formspree.io/f/xdkdokea', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
-      });
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 2000);
-  };
+      if (response.ok) {
+        toast.success('Message Sent!', {
+          description: "Thank you for your message. I'll get back to you soon.",
+        })
+        reset()
+      } else {
+        toast.error('Error', {
+          description: 'Something went wrong. Please try again.',
+        })
+      }
+    } catch {
+      toast.error('Error', {
+        description: 'Network issue. Please try again later.',
+      })
+    }
+  }
 
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'diamond@example.com',
-      href: 'mailto:diamond@example.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: 'sandrosaralidze15@gmail.com',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'New York, NY',
-      href: '#'
-    }
-  ];
+      value: 'Tbilisi, Georgia',
+    },
+  ]
 
   return (
     <section id="contact" className="py-20 px-6">
@@ -68,7 +77,7 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                I'm always interested in new opportunities and exciting projects. 
+                I'm always interested in new opportunities and exciting projects.
                 Whether you have a question or just want to say hi, feel free to reach out!
               </p>
             </div>
@@ -92,46 +101,21 @@ const Contact = () => {
                 </a>
               ))}
             </div>
-
-            <div className="pt-8">
-              <h4 className="text-lg font-semibold text-foreground mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all duration-300 hover:scale-110"
-                >
-                  <Github size={24} />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-110"
-                >
-                  <Linkedin size={24} />
-                </a>
-              </div>
-            </div>
           </div>
 
           <div className="bg-background p-8 rounded-2xl shadow-lg border bordernew">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Your Name
                 </label>
                 <input
-                  type="text"
                   id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
+                  {...register('name')}
                   className="w-full px-4 py-3 bg-background border bordernew rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                   placeholder="Enter your name"
                 />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
               </div>
 
               <div>
@@ -139,15 +123,13 @@ const Contact = () => {
                   Your Email
                 </label>
                 <input
-                  type="email"
                   id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
+                  type="email"
+                  {...register('email')}
                   className="w-full px-4 py-3 bg-background border bordernew rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                   placeholder="Enter your email"
                 />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
               </div>
 
               <div>
@@ -156,14 +138,12 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
                   rows={5}
+                  {...register('message')}
                   className="w-full px-4 py-3 bg-background border bordernew rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
                   placeholder="Enter your message"
                 />
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
               </div>
 
               <button
@@ -173,7 +153,7 @@ const Contact = () => {
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
                     <span>Sending...</span>
                   </>
                 ) : (
@@ -188,7 +168,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,15 +1,23 @@
 import { Award, Coffee, Code, Users } from 'lucide-react';
+import { useState } from 'react';
+import CertificateModal from './CertificateModal';
+import Timeline from './Timeline';
 
 const About = () => {
+  const [showUdemy, setShowUdemy] = useState(false);
+  const [showTbc, setShowTbc] = useState(false);
+
   const stats = [
     { icon: Code, value: '2+', label: 'Years Experience' },
     { icon: Award, value: '10+', label: 'Projects Completed' },
-    { icon: Coffee, value: '1000+', label: 'Commits' },
-    { icon: Users, value: '50+', label: 'Happy Clients' }
+    { icon: Coffee, value: '200+', label: 'Commits' },
+    { icon: Users, value: '10+', label: 'Happy Clients' }
   ];
+  
+  
 
   return (
-    <section id="about" className="py-20 px-6 bg-muted/30">
+    <section id="about" className="py-20 sm:px-6 px-2 bg-muted/30">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
@@ -20,38 +28,52 @@ const About = () => {
           <p className="text-xl text-muted-foreground">Quick Introduction</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <div className="w-full max-w-md mx-auto">
-              <div className="relative bg-gradient-to-br from-blue-500 via-purple-500 to-teal-500 p-1 rounded-3xl">
-                <div className="bg-background rounded-3xl p-8 h-80 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                      <Code size={48} className="text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      Diamond SS
-                    </h3>
-                    <p className="text-muted-foreground mt-2">Full Stack Developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div className="grid lg:grid-cols-2 gap-12 sm:h-[560px]">
+          <Timeline />
           <div>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <div className="prose prose-lg max-w-none mb-10">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a passionate developer specializing in React, JavaScript, .NET, and building great user experiences. 
                 I enjoy solving problems and turning ideas into reality. My work ranges from web apps to creative UIs, 
-                always focusing on clean code and modern design principles.
+                always focusing on clean code and modern design principles. I also hold certifications from 
+                <strong 
+                  onClick={() => setShowUdemy(true)} 
+                  className="cursor-pointer underline text-foreground"
+                >
+                  {' '}Udemy
+                </strong> 
+                {' '}and
+                <strong 
+                  onClick={() => setShowTbc(true)} 
+                  className="cursor-pointer underline text-foreground"
+                >
+                  {' '}TBC Academy
+                </strong>.
               </p>
-              
-              <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, 
                 or sharing knowledge with the developer community.
               </p>
+
+              {showUdemy && (
+                <CertificateModal
+                  title="Udemy Certificate"
+                  pdfSrc="/certs/udemy-cert.pdf"
+                  onClose={() => setShowUdemy(false)}
+                />
+              )}
+
+              {showTbc && (
+                <CertificateModal
+                  title="TBC Academy Certificate"
+                  pdfSrc="/certs/tbc-cert.pdf"
+                  onClose={() => setShowTbc(false)}
+                />
+              )}
             </div>
+
+
 
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (

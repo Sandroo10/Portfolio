@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-              Diamond SS
+              Sandro Saralidze
             </h3>
             <p className="text-muted-foreground">
               Building the future, one line of code at a time.
@@ -22,7 +22,7 @@ const Footer = () => {
 
           <div className="flex justify-center space-x-6">
             <a
-              href="https://github.com"
+              href="https://github.com/Sandroo10"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-background border bordernew rounded-lg hover:border-blue-600 hover:scale-110 transition-all duration-300"
@@ -30,21 +30,14 @@ const Footer = () => {
               <Github size={24} className="text-muted-foreground hover:text-blue-600 transition-colors duration-300" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/sandro-saralidze-04430532a/" 
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-background border bordernew rounded-lg hover:border-blue-600 hover:scale-110 transition-all duration-300"
             >
               <Linkedin size={24} className="text-muted-foreground hover:text-blue-600 transition-colors duration-300" />
             </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-background border bordernew rounded-lg hover:border-blue-600 hover:scale-110 transition-all duration-300"
-            >
-              <Instagram size={24} className="text-muted-foreground hover:text-blue-600 transition-colors duration-300" />
-            </a>
+          
           </div>
 
           {/* Back to Top */}
