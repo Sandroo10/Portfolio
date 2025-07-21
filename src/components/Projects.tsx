@@ -1,54 +1,53 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Star } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce platform built with React and .NET API, featuring user authentication, payment integration, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
-      technologies: ['React', '.NET', 'SQL Server', 'Stripe'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      title: 'EvCarCharger',
+      description: 'My best project by far as freelancers. Deployed for usage and with scores of 100 SEO, 95+ in perfromance, acccessebilty and best practices.(Private Repo)',
+      image: '/images/EvCarCharger.webp',
+      technologies: ['React', 'Supabase', 'Resend', 'Bog Payment'],
+      liveUrl: 'https://evcarcharger.ge',
+      githubUrl: 'https://github.com/Sandroo10?tab=repositories'
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      title: 'EduLeveling',
+      description: 'A collaborative learning platform for mathematics, physics and programming developed as hackathon idea (Only visual no backend until further development)',
+      image: '/images/EduLeveling.webp',
+      technologies: ['React', 'ShadCn', 'Tailwind', 'Responsivness'],
+      liveUrl: 'https://tankistebivart.vercel.app/',
+      githubUrl: 'https://github.com/Sandroo10/tankistebivart'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with location-based forecasts, interactive maps, and personalized weather alerts.',
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&h=300&fit=crop',
-      technologies: ['React', 'TypeScript', 'OpenWeather API', 'Chart.js'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      title: 'E-Commerce Website',
+      description: 'Simple E-commerce Website for sellings clothes given as a freelancer. Built in React.Js and using css modules(such where the requirements)',
+      image: `https://static.vecteezy.com/system/resources/previews/001/421/483/non_2x/clothes-on-hangers-free-photo.jpeg`,
+      technologies: ['React', 'CSS.Modules', 'JavaScript', 'Figma'],
+      liveUrl: 'https://e-commerce-psi-pink-86.vercel.app/men',
+      githubUrl: 'https://github.com/Sandroo10/E-commerce'
     },
     {
-      title: 'Social Media Dashboard',
-      description: 'A comprehensive social media management dashboard with analytics, scheduling, and multi-platform integration.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
-      technologies: ['React', '.NET', 'PostgreSQL', 'Redis'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      title: 'RetailMax (Final for TBC Academy Project)',
+      description: 'A project that was done in 2 days while I had finals. Very rough design but working backend in supabase(may be down due to inactivity) and all functionality of a cart',
+      image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
+      technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
+      liveUrl: 'https://retail-max.vercel.app/',
+      githubUrl: 'https://github.com/Sandroo10/RetailMax'
     },
     {
       title: 'Portfolio Website',
-      description: 'A responsive portfolio website showcasing modern design principles, smooth animations, and interactive elements.',
+      description: 'In the flesh. A responsive portfolio website showcasing modern design principles, smooth animations, and interactive elements.',
       image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Netlify'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      technologies: ['React', 'Tailwind', 'FormSpree', 'Vercel'],
+      liveUrl: '/',
+      githubUrl: 'https://github.com/Sandroo10/Portfolio'
     },
     {
-      title: 'Learning Management System',
-      description: 'An educational platform with course management, progress tracking, video streaming, and interactive quizzes.',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop',
-      technologies: ['React', '.NET Core', 'Azure', 'SignalR'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      title: '.Net WebServerApp',
+      description: 'Small webserver application that I designed in .Net very raw but great test for learning.',
+      image: '/images/WebApp.webp',
+      technologies: ['HTML', '.NET', 'WebServer', 'C#'],
+      githubUrl: 'https://github.com/Sandroo10/ProjectWebServerApp'
     }
   ];
 
@@ -68,9 +67,18 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-background rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border bordernew overflow-hidden"
+              className="flex flex-col h-[450px] relative group bg-background rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border bordernew overflow-hidden"
             >
-              <div className="relative overflow-hidden">
+            {(index === 0 || index === 2) && (
+              <div
+                title="Featured Project"
+                className="absolute top-3 z-10 right-3 bg-yellow-400 text-white rounded-full p-1 shadow-md"
+              >
+                <Star size={28} className="text-white" />
+              </div>
+
+            )}  
+              <div className="h-48 relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -79,12 +87,12 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col h-[318px] justify-around">
                 <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-blue-600 transition-colors duration-300">
                   {project.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed h-16">
                   {project.description}
                 </p>
 
@@ -127,7 +135,7 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://github.com"
+            href="https://github.com/Sandroo10"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-full hover:from-gray-900 hover:to-black transition-all duration-300 hover:scale-105 font-medium"
