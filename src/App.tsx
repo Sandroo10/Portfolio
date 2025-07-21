@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeProvider';
 import { Toaster } from './components/ui/sonner';
+import FloatingDownloadButton from './components/CvButton';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Skills />
         <Contact />
         <Footer />
+        <FloatingDownloadButton />
         <Toaster position="bottom-center" richColors />
       </div>
     </ThemeProvider>
