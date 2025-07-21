@@ -92,11 +92,11 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed h-16">
+                <p className="text-muted-foreground mb-4 sm:text-sm text-xs leading-relaxed h-24">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 sm:mb-6 mb-3">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
@@ -114,7 +114,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 text-sm font-medium"
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink className="w-2.5 h-2.5 sm:w-5 sm:h-5"  />
                     <span>Live Site</span>
                   </a>
                   
@@ -124,7 +124,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all duration-300 hover:scale-105 text-sm font-medium"
                   >
-                    <Github size={16} />
+                    <Github className="w-2.5 h-2.5 sm:w-5 sm:h-5" />
                     <span>GitHub</span>
                   </a>
                 </div>
