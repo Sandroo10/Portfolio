@@ -40,7 +40,6 @@ const Footer = () => {
           
           </div>
 
-          {/* Back to Top */}
           <div className="text-center md:text-right">
             <button
               onClick={scrollToTop}
@@ -54,7 +53,7 @@ const Footer = () => {
 
         <div className="border-t bordernew mt-8 pt-8 text-center">
           <p className="text-muted-foreground">
-            © {currentYear} Diamond SS. All rights reserved. Built with ❤️ using React & Tailwind CSS.
+            © {currentYear} Sandro Saralidze All rights reserved. Built using React & Tailwind CSS and much hard work 👩🏻‍💻💪.
           </p>
         </div>
       </div>

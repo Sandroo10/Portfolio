@@ -1,4 +1,3 @@
-// src/hooks/useToast.ts
 import { useState } from "react";
 
 export const useToast = () => {
