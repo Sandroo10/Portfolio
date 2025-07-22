@@ -4,8 +4,9 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
   const roles = [
-    "Full Stack Developer",
-    "React & .NET Specialist", 
+    "Frontend Developer",
+    "React & .NET Specialist",
+    "Full Stack Developer", 
     "Frontend Artist"
   ];
 
