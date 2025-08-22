@@ -40,7 +40,6 @@ const Footer = () => {
           
           </div>
 
-          //testetst
           
           <div className="text-center md:text-right">
             <button
