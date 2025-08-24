@@ -17,7 +17,8 @@ const Skills = () => {
         { name: 'Node.js', icon: '/svgs/nodejs.svg' },
         { name: 'C#', icon: '/svgs/csharp.svg' },
         { name: 'Firebase', icon: '/svgs/firebase.svg' },
-        { name: `Supabase`, icon: `/svgs/supabase.svg`}
+        { name: `Supabase`, icon: `/svgs/supabase.svg`},
+        { name: `Python`, icon: `/svgs/python.svg`}
       ]
     },
     {
