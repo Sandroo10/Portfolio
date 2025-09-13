@@ -40,6 +40,11 @@ const workData = [
     location: "Remote - Freelance",
     date: "2024 - Present",
   },
+  {
+    title: "Junior Backend Developer",
+    location: "Remote - Nugios Technologies",
+    date: "2025 - Present",
+  },
 ];
 
 const TimelineItem = ({

@@ -4,10 +4,8 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
   const roles = [
-    "Frontend Developer",
-    "React & .NET Specialist",
-    "Full Stack Developer", 
-    "Frontend Artist"
+    "Full Stack Developer",
+    "React & .NET Specialist" 
   ];
 
   const scrollToSection = (href: string) => {
