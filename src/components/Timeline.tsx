@@ -36,8 +36,8 @@ const workData = [
     date: "2024 - 2025",
   },
   {
-    title: "Freelancer",
-    location: "Remote - Freelance",
+    title: "FrontEnd Developer",
+    location: "Part time - Kutaisi International University",
     date: "2024 - Present",
   },
   {
