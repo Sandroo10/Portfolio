@@ -41,7 +41,7 @@ const workData = [
     date: "2024 - Present",
   },
   {
-    title: "Junior Backend Developer",
+    title: "QA Automation Tester",
     location: "Remote - Nugios Technologies",
     date: "2025 - Present",
   },
