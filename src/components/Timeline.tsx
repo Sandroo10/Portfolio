@@ -38,7 +38,7 @@ const workData = [
   {
     title: "FrontEnd Developer",
     location: "Part time - Kutaisi International University",
-    date: "2024 - Present",
+    date: "2025 - Present",
   },
   {
     title: "QA Automation Tester",
