@@ -8,9 +8,9 @@ const About = () => {
   const [showTbc, setShowTbc] = useState(false);
 
   const stats = [
-    { icon: Code, value: '2+', label: 'Years Experience' },
+    { icon: Code, value: '3+', label: 'Years Experience' },
     { icon: Award, value: '10+', label: 'Projects Completed' },
-    { icon: Coffee, value: '200+', label: 'Commits' },
+    { icon: Coffee, value: '500+', label: 'Commits' },
     { icon: Users, value: '10+', label: 'Happy Clients' }
   ];
   

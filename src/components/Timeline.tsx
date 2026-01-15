@@ -26,14 +26,9 @@ const educationData = [
 
 const workData = [
   {
-    title: "Lecturer/Mentor (Frontend Basics)",
-    location: "Georgia - Lopus Electronics",
-    date: "2023 - 2024",
-  },
-  {
-    title: "Student Assitant in Scripting Languages",
-    location: "Remote - Kutaisi International University",
-    date: "2024 - 2025",
+    title: "QA Automation Tester",
+    location: "Remote - Nugios Systems",
+    date: "2025 - Present",
   },
   {
     title: "FrontEnd Developer",
@@ -41,9 +36,19 @@ const workData = [
     date: "2025 - Present",
   },
   {
-    title: "QA Automation Tester",
-    location: "Remote - Nugios Technologies",
-    date: "2025 - Present",
+    title: "Freelace Frontend Developer",
+    location: "Freelance",
+    date: "2024 - 2025",
+  },
+  {
+    title: "Student Assitant in Scripting Languages",
+    location: "Remote - Kutaisi International University",
+    date: "2024 - 2025",
+  },
+  {
+    title: "Lecturer/Mentor (Frontend Basics)",
+    location: "Georgia - Lopus Electronics",
+    date: "2023 - 2024",
   },
 ];
 

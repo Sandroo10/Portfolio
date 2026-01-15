@@ -5,6 +5,7 @@ import { Typewriter } from 'react-simple-typewriter';
 const Hero = () => {
   const roles = [
     "Full Stack Developer",
+    "QA Automation Tester",
     "React & .NET Specialist" 
   ];
 
@@ -68,6 +69,7 @@ const Hero = () => {
               <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl">
                 I love building full-stack applications and clean, modern UIs. 
                 Passionate about turning ideas into reality through code.
+                Also certified by Udemy and TBC Academy and currently QA Automation Tester at Nugios Systems.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
