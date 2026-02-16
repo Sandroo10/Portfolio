@@ -11,12 +11,12 @@ const Projects = () => {
       githubUrl: 'https://github.com/Sandroo10?tab=repositories'
     },
     {
-      title: 'EduLeveling',
-      description: 'A collaborative learning platform for mathematics, physics and programming developed as hackathon idea (Only visual no backend until further development)',
-      image: '/images/EduLeveling.webp',
-      technologies: ['React', 'ShadCn', 'Tailwind', 'Responsivness'],
-      liveUrl: 'https://tankistebivart.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/tankistebivart'
+      title: 'KIU re-make Website',
+      description: 'I participated in KIU re-make website contest and this is the website me and my teammate made. I was chosen as the Co-winner and am working on new website which i cannot disclose yet. (Private Repo)',
+      image: '/images/KIU.webp',
+      technologies: ['React','Express', 'Chatbot', 'Tailwind', 'FormSpree', 'Vercel'],
+      liveUrl: 'https://kiu-website.vercel.app/en',
+      githubUrl: 'https://github.com/Sandroo10'
     },
     {
       title: 'E-Commerce Website',
@@ -35,12 +35,12 @@ const Projects = () => {
       githubUrl: 'https://github.com/Sandroo10/RetailMax'
     },
     {
-      title: 'Portfolio Website',
-      description: 'In the flesh. A responsive portfolio website showcasing modern design principles, smooth animations, and interactive elements.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop',
-      technologies: ['React', 'Tailwind', 'FormSpree', 'Vercel'],
-      liveUrl: '/',
-      githubUrl: 'https://github.com/Sandroo10/Portfolio'
+      title: 'EduLeveling',
+      description: 'A collaborative learning platform for mathematics, physics and programming developed as hackathon idea (Only visual no backend until further development)',
+      image: '/images/EduLeveling.webp',
+      technologies: ['React', 'ShadCn', 'Tailwind', 'Responsivness'],
+      liveUrl: 'https://tankistebivart.vercel.app/',
+      githubUrl: 'https://github.com/Sandroo10/tankistebivart'
     },
     {
       title: '.Net WebServerApp',
@@ -69,7 +69,7 @@ const Projects = () => {
               key={index}
               className="flex flex-col h-[450px] relative group bg-background rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border bordernew overflow-hidden"
             >
-            {(index === 0 || index === 2) && (
+            {(index === 0 || index === 1 || index === 2) && (
               <div
                 title="Featured Project"
                 className="absolute top-3 z-10 right-3 bg-yellow-400 text-white rounded-full p-1 shadow-md"
