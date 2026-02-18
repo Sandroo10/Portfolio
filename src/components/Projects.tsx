@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       title: 'Metro Echoes (Frontend + Backend + Testing)',
-      description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses OpenAI API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
+      description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses HuggingFace API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
       image: '/images/Artyom.webp',
       technologies: ['Next.js','Express', 'Chatbot', 'Tailwind', 'Jest', 'Vercel'],
       liveUrl: 'https://artyom-chatbot.vercel.app/',
