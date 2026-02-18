@@ -4,7 +4,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'EvCarCharger',
-      description: 'My best project by far as freelancers. Deployed for usage and with scores of 100 SEO, 95+ in perfromance, acccessebilty and best practices.(Private Repo)',
+      description: 'My best project by far as a freelancer. Has Supabase, payment systems integration and deployed for usage and with scores of 100 SEO, 95+ in perfromance, acccessebilty and best practices.(Private Repo)',
       image: '/images/EvCarCharger.webp',
       technologies: ['React', 'Supabase', 'Resend', 'Bog Payment'],
       liveUrl: 'https://evcarcharger.ge',
@@ -17,6 +17,14 @@ const Projects = () => {
       technologies: ['React','Express', 'Chatbot', 'Tailwind', 'FormSpree', 'Vercel'],
       liveUrl: 'https://kiu-website.vercel.app/en',
       githubUrl: 'https://github.com/Sandroo10'
+    },
+    {
+      title: 'Metro Echoes (Frontend + Backend + Testing)',
+      description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses OpenAI API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
+      image: '/images/Artyom.webp',
+      technologies: ['Next.js','Express', 'Chatbot', 'Tailwind', 'Jest', 'Vercel'],
+      liveUrl: 'https://artyom-chatbot.vercel.app/',
+      githubUrl: 'https://github.com/Sandroo10/ArtyomChatbot'
     },
     {
       title: 'E-Commerce Website',
