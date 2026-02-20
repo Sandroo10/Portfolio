@@ -35,8 +35,8 @@ const Projects = () => {
       githubUrl: 'https://github.com/Sandroo10/E-commerce'
     },
     {
-      title: 'RetailMax (Final for TBC Academy Project)',
-      description: 'A project that was done in 2 days while I had finals. Very rough design but working backend in supabase(may be down due to inactivity) and all functionality of a cart',
+      title: 'RetailMax (Final for TBC Academy Project) *Updated*',
+      description: 'A project that was done in 2 days while I had finals. still rough design but updated as well as new code structure, supabase for backend and database. working cart + login functionality. ',
       image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
       technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
       liveUrl: 'https://retail-max.vercel.app/',
