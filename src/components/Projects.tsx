@@ -19,6 +19,14 @@ const Projects = () => {
       githubUrl: 'https://github.com/Sandroo10'
     },
     {
+      title: 'RetailMax (Final for TBC Academy Project) *Updated*',
+      description: 'A project that was done in 2 days while I had finals. still rough design but updated as well as new code structure, supabase for backend and database. working cart + login functionality. ',
+      image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
+      technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
+      liveUrl: 'https://retail-max.vercel.app/',
+      githubUrl: 'https://github.com/Sandroo10/RetailMax'
+    },
+    {
       title: 'Metro Echoes (Frontend + Backend + Testing)',
       description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses HuggingFace API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
       image: '/images/Artyom.webp',
@@ -33,14 +41,6 @@ const Projects = () => {
       technologies: ['React', 'CSS.Modules', 'JavaScript', 'Figma'],
       liveUrl: 'https://e-commerce-psi-pink-86.vercel.app/men',
       githubUrl: 'https://github.com/Sandroo10/E-commerce'
-    },
-    {
-      title: 'RetailMax (Final for TBC Academy Project) *Updated*',
-      description: 'A project that was done in 2 days while I had finals. still rough design but updated as well as new code structure, supabase for backend and database. working cart + login functionality. ',
-      image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
-      technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
-      liveUrl: 'https://retail-max.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/RetailMax'
     },
     {
       title: 'EduLeveling',
