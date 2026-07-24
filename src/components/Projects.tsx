@@ -43,15 +43,15 @@ const Projects = () => {
       githubUrl: 'https://github.com/Sandroo10/E-commerce'
     },
     {
-      title: 'EduLeveling',
-      description: 'A collaborative learning platform for mathematics, physics and programming developed as hackathon idea (Only visual no backend until further development)',
-      image: '/images/EduLeveling.webp',
-      technologies: ['React', 'ShadCn', 'Tailwind', 'Responsivness'],
-      liveUrl: 'https://tankistebivart.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/tankistebivart'
+      title: 'Marionette MusicBox (Website + Discord Bot)',
+      description: 'A FNAF-inspired showcase website for Marionette MusicBox, paired with a working Discord music bot. The bot supports slash commands, per-server queues, and YouTube playback.',
+      image: '/images/Marionette-MusicBox.png',
+      technologies: ['React', 'TypeScript', 'Tailwind', 'Discord.js', 'Node.js'],
+      liveUrl: 'https://marionette-discordbot.vercel.app/',
+      githubUrl: 'https://github.com/Sandroo10/MarionetteBotShowcase'
     },
     {
-      title: 'KIU football tournament',
+      title: 'KIU football tournament (As a part of event Co-Organizers)',
       description: 'A football tournament website for KIU students. I built this website as a part of team of organizers of the tournament. It has a simple design and is built in Next.js and Tailwind CSS. It is also fully responsive.',
       image: '/images/KIU_Football_Tournament.webp',
       technologies: ['Next.js', 'Tailwind', 'Responsivness'],
@@ -124,15 +124,17 @@ const Projects = () => {
                 </div>
 
                 <div className="flex space-x-4">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 text-sm font-medium"
-                  >
-                    <ExternalLink className="w-2.5 h-2.5 sm:w-5 sm:h-5"  />
-                    <span>Live Site</span>
-                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 text-sm font-medium"
+                    >
+                      <ExternalLink className="w-2.5 h-2.5 sm:w-5 sm:h-5"  />
+                      <span>Live Site</span>
+                    </a>
+                  )}
                   
                   <a
                     href={project.githubUrl}
