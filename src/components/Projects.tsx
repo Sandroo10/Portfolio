@@ -77,7 +77,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="flex h-[520px] flex-col relative group bg-background rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border bordernew overflow-hidden"
+              className="relative flex h-auto flex-col overflow-hidden rounded-2xl border bordernew bg-background shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl sm:h-[520px]"
             >
             {(index === 0 || index === 1 || index === 2) && (
               <div
@@ -102,11 +102,11 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 
-                <p className="mb-4 h-24 overflow-hidden text-muted-foreground sm:text-sm text-xs leading-relaxed">
+                <p className="mb-4 min-h-24 text-xs leading-relaxed text-muted-foreground sm:h-24 sm:overflow-hidden sm:text-sm">
                   {project.description}
                 </p>
 
-                <div className="mb-6 flex min-h-14 flex-wrap content-start gap-2">
+                <div className="mb-2 flex min-h-14 flex-wrap content-start gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
