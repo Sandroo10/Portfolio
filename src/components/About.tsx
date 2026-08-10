@@ -1,17 +1,25 @@
-import { Award, Coffee, Code, Users } from 'lucide-react';
+import { Award, Code, Users } from 'lucide-react';
 import { useState } from 'react';
 import CertificateModal from './CertificateModal';
+import CertificationListModal, { type Certificate } from './CertificationListModal';
 import Timeline from './Timeline';
 
+const certificates: Certificate[] = [
+  { title: 'Udemy Certificate', issuer: 'Udemy', pdfSrc: '/certs/udemy-cert.pdf' },
+  { title: 'TBC Academy Certificate', issuer: 'TBC Academy', pdfSrc: '/certs/tbc-cert.pdf' },
+  { title: 'Data Structures & Algorithms: Binary Search', issuer: 'Scrimba', pdfSrc: '/certs/data-structures-cert.pdf' },
+  { title: 'Learn Python', issuer: 'Scrimba', pdfSrc: '/certs/python-cert.pdf' },
+];
+
 const About = () => {
-  const [showUdemy, setShowUdemy] = useState(false);
-  const [showTbc, setShowTbc] = useState(false);
+  const [showCertifications, setShowCertifications] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
 
   const stats = [
-    { icon: Code, value: '3+', label: 'Years Experience' },
-    { icon: Award, value: '10+', label: 'Projects Completed' },
-    { icon: Coffee, value: '500+', label: 'Commits' },
-    { icon: Users, value: '10+', label: 'Happy Clients' }
+    { icon: Code, value: '2+', label: 'Years Experience Frontend' },
+    { icon: Users, value: '10+', label: 'Projects Completed' },
+    { icon: Code, value: '1+', label: 'Years Experience QA Engineer' },
+    { icon: Award, value: '4', label: 'Professional Certifications', isCertificateCard: true }
   ];
   
   
@@ -28,7 +36,7 @@ const About = () => {
           <p className="text-xl text-muted-foreground">Quick Introduction</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:h-[560px]">
+        <div className="grid grid-cols-1 sm:grid-cols-[1.1fr_1fr] gap-12 sm:h-[590px]">
           <Timeline />
           <div>
             <div className="prose prose-lg max-w-none mb-10">
@@ -36,19 +44,13 @@ const About = () => {
                 I'm a passionate developer specializing in React, JavaScript, .NET, and building great user experiences. 
                 I enjoy solving problems and turning ideas into reality. My work ranges from web apps to creative UIs, 
                 always focusing on clean code and modern design principles. I also hold certifications from 
-                <strong 
-                  onClick={() => setShowUdemy(true)} 
-                  className="cursor-pointer underline text-foreground"
+                <button
+                  type="button"
+                  onClick={() => setShowCertifications(true)}
+                  className="font-semibold text-amber-600 underline decoration-2 underline-offset-4 transition-colors hover:text-amber-500 dark:text-amber-300 dark:hover:text-amber-200"
                 >
-                  {' '}Udemy
-                </strong> 
-                {' '}and
-                <strong 
-                  onClick={() => setShowTbc(true)} 
-                  className="cursor-pointer underline text-foreground"
-                >
-                  {' '}TBC Academy
-                </strong>.
+                  {' '}Udemy, TBC Academy, and other professional certification courses
+                </button>.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -56,33 +58,15 @@ const About = () => {
                 or sharing knowledge with the developer community.
               </p>
 
-              {showUdemy && (
-                <CertificateModal
-                  title="Udemy Certificate"
-                  pdfSrc="/certs/udemy-cert.pdf"
-                  onClose={() => setShowUdemy(false)}
-                />
-              )}
-
-              {showTbc && (
-                <CertificateModal
-                  title="TBC Academy Certificate"
-                  pdfSrc="/certs/tbc-cert.pdf"
-                  onClose={() => setShowTbc(false)}
-                />
-              )}
             </div>
 
 
 
             <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index}
-                  className="bg-background p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border bordernew"
-                >
+              {stats.map((stat, index) => {
+                const cardContent = (
                   <div className="flex sm:flex-row flex-col items-center space-x-4">
-                    <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg text-white">
+                    <div className={`p-3 rounded-lg text-white ${stat.isCertificateCard ? 'bg-gradient-to-br from-amber-500 to-orange-600' : 'bg-gradient-to-br from-blue-500 to-purple-500'}`}>
                       <stat.icon size={24} />
                     </div>
                     <div>
@@ -90,12 +74,44 @@ const About = () => {
                       <div className="text-sm text-muted-foreground">{stat.label}</div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+
+                return stat.isCertificateCard ? (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setShowCertifications(true)}
+                    className="bg-gradient-to-br from-amber-500/15 via-orange-500/10 to-transparent p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-amber-500/50 text-left ring-1 ring-amber-400/20"
+                  >
+                    {cardContent}
+                  </button>
+                ) : (
+                  <div
+                    key={index}
+                    className="bg-background p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border bordernew"
+                  >
+                    {cardContent}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </div>
+      {showCertifications && (
+        <CertificationListModal
+          certificates={certificates}
+          onClose={() => setShowCertifications(false)}
+          onOpenCertificate={setSelectedCertificate}
+        />
+      )}
+      {selectedCertificate && (
+        <CertificateModal
+          title={selectedCertificate.title}
+          pdfSrc={selectedCertificate.pdfSrc}
+          onClose={() => setSelectedCertificate(null)}
+        />
+      )}
     </section>
   );
 };

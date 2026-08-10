@@ -22,6 +22,7 @@ const Projects = () => {
       title: 'RetailMax (Final for TBC Academy Project) *Updated*',
       description: 'A project that was done in 2 days while I had finals. still rough design but updated as well as new code structure, supabase for backend and database. working cart + login functionality. ',
       image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
+      imageClassName: 'scale-110',
       technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
       liveUrl: 'https://retail-max.vercel.app/',
       githubUrl: 'https://github.com/Sandroo10/RetailMax'
@@ -46,6 +47,7 @@ const Projects = () => {
       title: 'KIU football tournament (As a part of event Co-Organizers)',
       description: 'A football tournament website for KIU students. I built this website as a part of team of organizers of the tournament. It has a simple design and is built in Next.js and Tailwind CSS. It is also fully responsive.',
       image: '/images/KIU_Football_Tournament.webp',
+      imageClassName: 'scale-125',
       technologies: ['Next.js', 'Tailwind', 'Responsivness'],
       liveUrl: 'https://kiu-football-tournament-2026.vercel.app/',
       githubUrl: 'https://github.com/Sandroo10'
@@ -86,11 +88,11 @@ const Projects = () => {
               </div>
 
             )}  
-              <div className="h-48 relative overflow-hidden">
+              <div className="h-48 relative shrink-0 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className={`absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.15] ${project.imageClassName ?? ''}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
