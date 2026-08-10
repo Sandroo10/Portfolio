@@ -117,7 +117,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="mt-auto flex space-x-4">
+                <div className="flex space-x-4">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
