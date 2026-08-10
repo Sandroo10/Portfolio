@@ -16,7 +16,7 @@ const Projects = () => {
       image: '/images/KIU.webp',
       technologies: ['React','Express', 'Chatbot', 'Tailwind', 'FormSpree', 'Vercel'],
       liveUrl: 'https://kiu-website.vercel.app/en',
-      githubUrl: 'https://github.com/Sandroo10'
+      githubUrl: 'https://github.com/Mosa-5/Kiu_website'
     },
     {
       title: 'RetailMax (Final for TBC Academy Project) *Updated*',
@@ -33,14 +33,6 @@ const Projects = () => {
       technologies: ['Next.js','Express', 'Chatbot', 'Tailwind', 'Jest', 'Vercel'],
       liveUrl: 'https://artyom-chatbot.vercel.app/',
       githubUrl: 'https://github.com/Sandroo10/ArtyomChatbot'
-    },
-    {
-      title: 'E-Commerce Website',
-      description: 'Simple E-commerce Website for sellings clothes given as a freelancer. Built in React.Js and using css modules(such where the requirements)',
-      image: `https://static.vecteezy.com/system/resources/previews/001/421/483/non_2x/clothes-on-hangers-free-photo.jpeg`,
-      technologies: ['React', 'CSS.Modules', 'JavaScript', 'Figma'],
-      liveUrl: 'https://e-commerce-psi-pink-86.vercel.app/men',
-      githubUrl: 'https://github.com/Sandroo10/E-commerce'
     },
     {
       title: 'Marionette MusicBox (Website + Discord Bot)',
