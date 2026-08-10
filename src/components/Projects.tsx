@@ -77,7 +77,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="flex flex-col h-[450px] relative group bg-background rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border bordernew overflow-hidden"
+              className="flex h-[520px] flex-col relative group bg-background rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border bordernew overflow-hidden"
             >
             {(index === 0 || index === 1 || index === 2) && (
               <div
@@ -97,16 +97,16 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              <div className="p-6 flex flex-col h-[318px] justify-around">
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-blue-600 transition-colors duration-300">
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="mb-3 min-h-14 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-blue-600">
                   {project.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4 sm:text-sm text-xs leading-relaxed h-24">
+                <p className="mb-4 h-24 overflow-hidden text-muted-foreground sm:text-sm text-xs leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 sm:mb-6 mb-3">
+                <div className="mb-6 flex min-h-14 flex-wrap content-start gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
@@ -117,7 +117,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex space-x-4">
+                <div className="mt-auto flex space-x-4">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
