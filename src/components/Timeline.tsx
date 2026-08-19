@@ -4,7 +4,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "./ui/tabs";
-import { CalendarDays, GraduationCap, Briefcase, LaptopMinimal, type LucideIcon } from "lucide-react";
+import { CalendarDays, GraduationCap, Briefcase, type LucideIcon } from "lucide-react";
 
 const educationData = [
   {
@@ -46,10 +46,11 @@ const workData = [
     logoAlt: "Kutaisi International University logo",
   },
   {
-    title: "Freelance Frontend Developer",
-    location: "Freelance - EvCarChager",
+    title: "Contract Frontend Developer",
+    location: "Contract - EvCarCharger",
     date: "2024 Dec - 2025 Jul",
-    icon: LaptopMinimal,
+    logo: "/images/evcarcharger-logo.png",
+    logoAlt: "EvCarCharger logo",
   },
   {
     title: "Lecturer/Mentor (Frontend Basics)",

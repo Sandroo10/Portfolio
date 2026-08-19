@@ -44,15 +44,6 @@ const Projects = () => {
       githubUrl: 'https://github.com/Sandroo10/MarionetteBotShowcase'
     },
     {
-      title: 'KIU football tournament (As a part of event Co-Organizers)',
-      description: 'A football tournament website for KIU students. I built this website as a part of team of organizers of the tournament. It has a simple design and is built in Next.js and Tailwind CSS. It is also fully responsive.',
-      image: '/images/KIU_Football_Tournament.webp',
-      imageClassName: 'scale-125',
-      technologies: ['Next.js', 'Tailwind', 'Responsivness'],
-      liveUrl: 'https://kiu-football-tournament-2026.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10'
-    },
-    {
       title: '.Net WebServerApp',
       description: 'Small webserver application that I designed in .Net very raw but great test for learning.',
       image: '/images/WebApp.webp',
