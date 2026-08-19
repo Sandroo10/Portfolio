@@ -4,6 +4,7 @@ export type Certificate = {
   title: string;
   issuer: string;
   pdfSrc: string;
+  category: 'Frontend' | 'Backend' | 'Automated Testing';
 };
 
 type CertificationListModalProps = {
@@ -23,7 +24,7 @@ const CertificationListModal = ({
     aria-modal="true"
     aria-labelledby="certifications-title"
   >
-    <div className="relative w-full max-w-2xl rounded-2xl border border-border bg-background p-6 shadow-2xl">
+    <div className="relative flex max-h-[calc(100vh-2rem)] w-full max-w-2xl flex-col rounded-2xl border border-border bg-background p-6 shadow-2xl">
       <button
         type="button"
         onClick={onClose}
@@ -43,21 +44,37 @@ const CertificationListModal = ({
         <p className="mt-1 text-muted-foreground">Choose a certificate to view its PDF.</p>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        {certificates.map((certificate) => (
-          <button
-            key={certificate.title}
-            type="button"
-            onClick={() => onOpenCertificate(certificate)}
-            className="group flex items-center justify-between rounded-xl border border-border bg-muted/40 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-amber-500/60 hover:bg-amber-500/10 hover:shadow-lg"
-          >
-            <span>
-              <span className="block font-semibold text-foreground">{certificate.title}</span>
-              <span className="mt-1 block text-sm text-muted-foreground">{certificate.issuer}</span>
-            </span>
-            <ExternalLink className="ml-3 h-5 w-5 shrink-0 text-amber-600 transition-transform group-hover:scale-110 dark:text-amber-300" />
-          </button>
-        ))}
+      <div className="min-h-0 space-y-6 overflow-y-auto pr-1">
+        {(['Frontend', 'Backend', 'Automated Testing'] as const).map((category) => {
+          const group = certificates.filter((certificate) => certificate.category === category);
+
+          return (
+            <section key={category} aria-labelledby={`${category.toLowerCase().replaceAll(' ', '-')}-certifications`}>
+              <h3
+                id={`${category.toLowerCase().replaceAll(' ', '-')}-certifications`}
+                className="mb-3 text-sm font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-300"
+              >
+                {category}
+              </h3>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {group.map((certificate) => (
+                  <button
+                    key={certificate.title}
+                    type="button"
+                    onClick={() => onOpenCertificate(certificate)}
+                    className="group flex items-center justify-between rounded-xl border border-border bg-muted/40 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-amber-500/60 hover:bg-amber-500/10 hover:shadow-lg"
+                  >
+                    <span>
+                      <span className="block font-semibold text-foreground">{certificate.title}</span>
+                      <span className="mt-1 block text-sm text-muted-foreground">{certificate.issuer}</span>
+                    </span>
+                    <ExternalLink className="ml-3 h-5 w-5 shrink-0 text-amber-600 transition-transform group-hover:scale-110 dark:text-amber-300" />
+                  </button>
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   </div>
