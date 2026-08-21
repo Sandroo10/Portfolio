@@ -1,22 +1,45 @@
 import { ExternalLink, Github, Star } from 'lucide-react';
+import { useState } from 'react';
+
+type ProjectCategory = 'Frontend' | 'QA' | 'Backend';
+
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  categories: ProjectCategory[];
+  githubUrl: string;
+  liveUrl?: string;
+  imageClassName?: string;
+  imageFit?: 'contain';
+  isFeatured?: boolean;
+};
 
 const Projects = () => {
-  const projects = [
+  const [activeFilter, setActiveFilter] = useState<ProjectCategory | 'All'>('All');
+  const filters: Array<ProjectCategory | 'All'> = ['All', 'Frontend', 'QA', 'Backend'];
+
+  const projects: Project[] = [
     {
       title: 'EvCarCharger',
       description: 'My best project by far as a freelancer. Has Supabase, payment systems integration and deployed for usage and with scores of 100 SEO, 95+ in perfromance, acccessebilty and best practices.(Private Repo)',
       image: '/images/EvCarCharger.webp',
       technologies: ['React', 'Supabase', 'Resend', 'Bog Payment'],
+      categories: ['Frontend', 'Backend'],
       liveUrl: 'https://evcarcharger.ge',
-      githubUrl: 'https://github.com/Sandroo10?tab=repositories'
+      githubUrl: 'https://github.com/Sandroo10?tab=repositories',
+      isFeatured: true,
     },
     {
       title: 'KIU re-make Website',
       description: 'I participated in KIU re-make website contest and this is the website me and my teammate made. I was chosen as the Co-winner and am working on new website which i cannot disclose yet. (Private Repo)',
       image: '/images/KIU.webp',
       technologies: ['React','Express', 'Chatbot', 'Tailwind', 'FormSpree', 'Vercel'],
+      categories: ['Frontend'],
       liveUrl: 'https://kiu-website.vercel.app/en',
-      githubUrl: 'https://github.com/Mosa-5/Kiu_website'
+      githubUrl: 'https://github.com/Mosa-5/Kiu_website',
+      isFeatured: true,
     },
     {
       title: 'RetailMax (Final for TBC Academy Project) *Updated*',
@@ -24,22 +47,36 @@ const Projects = () => {
       image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
       imageClassName: 'scale-110',
       technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
+      categories: ['Frontend', 'Backend'],
       liveUrl: 'https://retail-max.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/RetailMax'
+      githubUrl: 'https://github.com/Sandroo10/RetailMax',
+      isFeatured: true,
     },
     {
       title: 'Metro Echoes (Frontend + Backend + Testing)',
       description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses HuggingFace API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
       image: '/images/Artyom.webp',
       technologies: ['Next.js','Express', 'Chatbot', 'Tailwind', 'Jest', 'Vercel'],
+      categories: ['Frontend', 'Backend'],
       liveUrl: 'https://artyom-chatbot.vercel.app/',
       githubUrl: 'https://github.com/Sandroo10/ArtyomChatbot'
+    },
+    {
+      title: 'WebdriverIO Practice',
+      description: 'A focused WebdriverIO test automation practice project with browser-based test scenarios. This repository contains tests only, with no hosted application.',
+      image: '/svgs/webdriverio.svg',
+      imageFit: 'contain',
+      technologies: ['WebdriverIO', 'JavaScript', 'Automated Testing'],
+      categories: ['QA'],
+      githubUrl: 'https://github.com/Sandroo10/WebDriverIO-practice',
+      isFeatured: true,
     },
     {
       title: 'Marionette MusicBox (Website + Discord Bot)',
       description: 'A FNAF-inspired showcase website for Marionette MusicBox, paired with a working Discord music bot. The bot supports slash commands, per-server queues, and YouTube playback.',
       image: '/images/Marionette-MusicBox.png',
       technologies: ['React', 'TypeScript', 'Tailwind', 'Discord.js', 'Node.js'],
+      categories: ['Frontend', 'Backend'],
       liveUrl: 'https://marionette-discordbot.vercel.app/',
       githubUrl: 'https://github.com/Sandroo10/MarionetteBotShowcase'
     },
@@ -48,9 +85,14 @@ const Projects = () => {
       description: 'Small webserver application that I designed in .Net very raw but great test for learning.',
       image: '/images/WebApp.webp',
       technologies: ['HTML', '.NET', 'WebServer', 'C#'],
+      categories: ['Backend'],
       githubUrl: 'https://github.com/Sandroo10/ProjectWebServerApp'
-    }
+    },
   ];
+
+  const visibleProjects = activeFilter === 'All'
+    ? projects
+    : projects.filter((project) => project.categories.includes(activeFilter));
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -61,16 +103,34 @@ const Projects = () => {
               Projects
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">Websites I've Built</p>
+          <p className="text-xl text-muted-foreground">Projects I've Built</p>
+        </div>
+
+        <div className="mb-10 flex flex-wrap justify-center gap-3" aria-label="Filter projects">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              type="button"
+              onClick={() => setActiveFilter(filter)}
+              aria-pressed={activeFilter === filter}
+              className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300 ${
+                activeFilter === filter
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                  : 'bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+              }`}
+            >
+              {filter}
+            </button>
+          ))}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project) => (
             <div
-              key={index}
+              key={project.title}
               className="relative flex h-auto flex-col overflow-hidden rounded-2xl border bordernew bg-background shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl sm:h-[520px]"
             >
-            {(index === 0 || index === 1 || index === 2) && (
+            {project.isFeatured && (
               <div
                 title="Featured Project"
                 className="absolute top-3 z-10 right-3 bg-yellow-400 text-white rounded-full p-1 shadow-md"
@@ -83,7 +143,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.15] ${project.imageClassName ?? ''}`}
+                  className={`absolute inset-0 h-full w-full ${project.imageFit === 'contain' ? 'object-contain p-10' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.15] ${project.imageClassName ?? ''}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
