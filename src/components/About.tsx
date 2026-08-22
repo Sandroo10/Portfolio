@@ -10,6 +10,7 @@ const certificates: Certificate[] = [
   { title: 'Data Structures & Algorithms: Binary Search', issuer: 'Scrimba', pdfSrc: '/certs/data-structures-cert.pdf', category: 'Backend' },
   { title: 'Learn Python', issuer: 'Scrimba', pdfSrc: '/certs/python-cert.pdf', category: 'Backend' },
   { title: 'Create a Front-End App with React', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-create-react-app-cert.pdf', category: 'Frontend' },
+  { title: 'Learn TypeScript', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-typescript-cert.pdf', category: 'Frontend' },
   { title: 'Learn JavaScript: Asynchronous Programming', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-asynchronous-programming-cert.pdf', category: 'Frontend' },
   { title: 'Learn JavaScript Unit Testing', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-unit-testing-cert.pdf', category: 'Automated Testing' },
   { title: 'Learn WebdriverIO', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-webdriverio-cert.pdf', category: 'Automated Testing' },
@@ -25,7 +26,7 @@ const About = () => {
     { icon: Code, value: '2+', label: 'Years Experience Frontend' },
     { icon: Users, value: '10+', label: 'Projects Completed' },
     { icon: Code, value: '1+', label: 'Years Experience QA Engineer' },
-    { icon: Award, value: '10', label: 'Professional Certifications', isCertificateCard: true }
+    { icon: Award, value: '11', label: 'Professional Certifications', isCertificateCard: true }
   ];
   
   
