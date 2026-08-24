@@ -16,6 +16,7 @@ const certificates: Certificate[] = [
   { title: 'Learn WebdriverIO', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-webdriverio-cert.pdf', category: 'Automated Testing' },
   { title: 'UI Automation with WebdriverIO v7', issuer: 'Test Automation University', pdfSrc: '/certs/tau-webdriverio-cert.pdf', category: 'Automated Testing' },
   { title: 'Cucumber with JavaScript', issuer: 'Test Automation University', pdfSrc: '/certs/tau-cucumber-javascript-cert.pdf', category: 'Automated Testing' },
+  { title: 'Advanced Playwright', issuer: 'Test Automation University', pdfSrc: '/certs/tau-advanced-playwright-cert.pdf', category: 'Automated Testing' },
 ];
 
 const About = () => {
@@ -26,7 +27,7 @@ const About = () => {
     { icon: Code, value: '2+', label: 'Years Experience Frontend' },
     { icon: Users, value: '10+', label: 'Projects Completed' },
     { icon: Code, value: '1+', label: 'Years Experience QA Engineer' },
-    { icon: Award, value: '11', label: 'Professional Certifications', isCertificateCard: true }
+    { icon: Award, value: '12', label: 'Professional Certifications', isCertificateCard: true }
   ];
   
   
