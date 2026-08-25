@@ -33,7 +33,7 @@ const Projects = () => {
     },
     {
       title: 'KIU re-make Website',
-      description: 'I participated in KIU re-make website contest and this is the website me and my teammate made. I was chosen as the Co-winner and am working on new website which i cannot disclose yet. (Private Repo)',
+      description: 'I participated in KIU re-make website contest and this is the website me and my teammate made. I was chosen as the Co-winner and am working on new website.',
       image: '/images/KIU.webp',
       technologies: ['React','Express', 'Chatbot', 'Tailwind', 'FormSpree', 'Vercel'],
       categories: ['Frontend'],
@@ -53,15 +53,6 @@ const Projects = () => {
       isFeatured: true,
     },
     {
-      title: 'Metro Echoes (Frontend + Backend + Testing)',
-      description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses HuggingFace API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
-      image: '/images/Artyom.webp',
-      technologies: ['Next.js','Express', 'Chatbot', 'Tailwind', 'Jest', 'Vercel'],
-      categories: ['Frontend', 'Backend'],
-      liveUrl: 'https://artyom-chatbot.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/ArtyomChatbot'
-    },
-    {
       title: 'WebdriverIO Practice',
       description: 'A focused WebdriverIO test automation practice project with browser-based test scenarios. This repository contains tests only, with no hosted application.',
       image: '/svgs/webdriverio.svg',
@@ -72,6 +63,16 @@ const Projects = () => {
       isFeatured: true,
     },
     {
+      title: 'Playwright Practice',
+      description: 'A professional Playwright automation project built around SauceDemo, covering authentication, inventory, sorting, cart management, checkout, and purchase validation. It uses TypeScript, Page Object Model, reusable fixtures, multi-browser testing, CI with GitHub Actions, HTML reports, screenshots, traces, and automated type-checking—demonstrating maintainable, reliable end-to-end test architecture.',
+      image: '/svgs/playwright.svg',
+      imageFit: 'contain',
+      technologies: ['Playwright', 'TypeScript', 'End-to-End Testing'],
+      categories: ['QA'],
+      githubUrl: 'https://github.com/Sandroo10/PlayWright-Practice',
+      isFeatured: true,
+    },
+    {
       title: 'Marionette MusicBox (Website + Discord Bot)',
       description: 'A FNAF-inspired showcase website for Marionette MusicBox, paired with a working Discord music bot. The bot supports slash commands, per-server queues, and YouTube playback.',
       image: '/images/Marionette-MusicBox.png',
@@ -79,6 +80,15 @@ const Projects = () => {
       categories: ['Frontend', 'Backend'],
       liveUrl: 'https://marionette-discordbot.vercel.app/',
       githubUrl: 'https://github.com/Sandroo10/MarionetteBotShowcase'
+    },
+    {
+      title: 'Metro Echoes (Frontend + Backend + Testing)',
+      description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses HuggingFace API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
+      image: '/images/Artyom.webp',
+      technologies: ['Next.js','Express', 'Chatbot', 'Tailwind', 'Jest', 'Vercel'],
+      categories: ['Frontend', 'Backend'],
+      liveUrl: 'https://artyom-chatbot.vercel.app/',
+      githubUrl: 'https://github.com/Sandroo10/ArtyomChatbot'
     },
     {
       title: '.Net WebServerApp',

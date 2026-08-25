@@ -46,7 +46,7 @@ const workData = [
     logoAlt: "Kutaisi International University logo",
   },
   {
-    title: "Contract Frontend Developer",
+    title: "Full-Stack Developer",
     location: "Contract - EvCarCharger",
     date: "2024 Dec - 2025 Jul",
     logo: "/images/evcarcharger-logo.png",
@@ -115,13 +115,6 @@ const Timeline = () => {
     <div className="w-full max-w-4xl mx-auto p-7 pt-0">
       <Tabs defaultValue="education" className="w-full">
         <TabsList className="flex justify-center mb-6 gap-4">
-            <TabsTrigger
-              value="education"
-              className="w-[165px] flex items-center justify-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:!text-white data-[state=active]:rounded-lg data-[state=active]:hover:from-blue-700 data-[state=active]:hover:to-purple-700 data-[state=active]:transition-all data-[state=active]:duration-300 data-[state=active]:hover:scale-105"
-            >
-              <GraduationCap className="w-5 h-5" />
-              Education
-            </TabsTrigger>
 
             <TabsTrigger
               value="work"
@@ -129,6 +122,13 @@ const Timeline = () => {
             >
               <Briefcase className="w-5 h-5" />
               Work
+            </TabsTrigger>
+            <TabsTrigger
+              value="education"
+              className="w-[165px] flex items-center justify-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:!text-white data-[state=active]:rounded-lg data-[state=active]:hover:from-blue-700 data-[state=active]:hover:to-purple-700 data-[state=active]:transition-all data-[state=active]:duration-300 data-[state=active]:hover:scale-105"
+            >
+              <GraduationCap className="w-5 h-5" />
+              Education
             </TabsTrigger>
 
         </TabsList>

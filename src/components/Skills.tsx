@@ -40,6 +40,7 @@ const skillCategories: { title: string; description: string; skills: Skill[] }[]
     description: 'End-to-end, API, and behaviour-driven testing',
     skills: [
       { name: 'Mocha', icon: '/svgs/mocha.svg' },
+      { name: 'Playwright', icon: '/svgs/playwright.svg' },
       { name: 'WebdriverIO', icon: '/svgs/webdriverio.svg' },
       { name: 'SpecFlow', icon: '/images/specflow-logo.png' },
       { name: 'Reqnroll', icon: '/images/reqnroll-logo.png' },

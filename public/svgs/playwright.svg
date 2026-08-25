@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Playwright</title>
+  <rect width="128" height="128" rx="28" fill="#2d2d2d"/>
+  <path d="M28 34h72v60H28z" fill="#45ba9d"/>
+  <path d="M37 45h54v8H37zm0 15h27v8H37zm0 15h18v8H37z" fill="#fff"/>
+  <path d="m79 59 14 9-14 9z" fill="#2d2d2d"/>
+</svg>

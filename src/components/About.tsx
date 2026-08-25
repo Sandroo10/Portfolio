@@ -12,11 +12,11 @@ const certificates: Certificate[] = [
   { title: 'Create a Front-End App with React', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-create-react-app-cert.pdf', category: 'Frontend' },
   { title: 'Learn TypeScript', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-typescript-cert.pdf', category: 'Frontend' },
   { title: 'Learn JavaScript: Asynchronous Programming', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-asynchronous-programming-cert.pdf', category: 'Frontend' },
-  { title: 'Learn JavaScript Unit Testing', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-unit-testing-cert.pdf', category: 'Automated Testing' },
   { title: 'Learn WebdriverIO', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-webdriverio-cert.pdf', category: 'Automated Testing' },
+  { title: 'Advanced Playwright', issuer: 'Test Automation University', pdfSrc: '/certs/tau-advanced-playwright-cert.pdf', category: 'Automated Testing' },
   { title: 'UI Automation with WebdriverIO v7', issuer: 'Test Automation University', pdfSrc: '/certs/tau-webdriverio-cert.pdf', category: 'Automated Testing' },
   { title: 'Cucumber with JavaScript', issuer: 'Test Automation University', pdfSrc: '/certs/tau-cucumber-javascript-cert.pdf', category: 'Automated Testing' },
-  { title: 'Advanced Playwright', issuer: 'Test Automation University', pdfSrc: '/certs/tau-advanced-playwright-cert.pdf', category: 'Automated Testing' },
+  { title: 'Learn JavaScript Unit Testing', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-unit-testing-cert.pdf', category: 'Automated Testing' },
 ];
 
 const About = () => {
