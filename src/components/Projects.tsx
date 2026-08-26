@@ -73,6 +73,15 @@ const Projects = () => {
       isFeatured: true,
     },
     {
+      title: 'Advanced Playwright Banking Practice (In Progress)',
+      description: 'An in-progress Playwright and TypeScript test automation project for a demo banking interface. It focuses on building reliable end-to-end coverage for core user journeys while practicing scalable test organisation and browser automation patterns.',
+      image: '/images/advanced-playwright-banking-practice.png',
+      technologies: ['Playwright', 'TypeScript', 'End-to-End Testing'],
+      categories: ['QA'],
+      githubUrl: 'https://github.com/Sandroo10/Advanced-Playwright-Banking-Practice',
+      isFeatured: true,
+    },
+    {
       title: 'Marionette MusicBox (Website + Discord Bot)',
       description: 'A FNAF-inspired showcase website for Marionette MusicBox, paired with a working Discord music bot. The bot supports slash commands, per-server queues, and YouTube playback.',
       image: '/images/Marionette-MusicBox.png',
