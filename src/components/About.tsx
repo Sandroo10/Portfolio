@@ -10,12 +10,14 @@ const certificates: Certificate[] = [
   { title: 'Data Structures & Algorithms: Binary Search', issuer: 'Scrimba', pdfSrc: '/certs/data-structures-cert.pdf', category: 'Backend' },
   { title: 'Learn Python', issuer: 'Scrimba', pdfSrc: '/certs/python-cert.pdf', category: 'Backend' },
   { title: 'Learn Node.js', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-node-cert.pdf', category: 'Backend' },
+  { title: 'Learn Express', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-express-cert.pdf', category: 'Backend' },
   { title: 'Create a Front-End App with React', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-create-react-app-cert.pdf', category: 'Frontend' },
   { title: 'Learn TypeScript', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-typescript-cert.pdf', category: 'Frontend' },
   { title: 'Learn JavaScript: Asynchronous Programming', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-asynchronous-programming-cert.pdf', category: 'Frontend' },
   { title: 'Learn WebdriverIO', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-webdriverio-cert.pdf', category: 'Automated Testing' },
   { title: 'Advanced Playwright', issuer: 'Test Automation University', pdfSrc: '/certs/tau-advanced-playwright-cert.pdf', category: 'Automated Testing' },
   { title: 'API Test Automation with Postman', issuer: 'Test Automation University', pdfSrc: '/certs/tau-postman-api-test-automation.pdf', category: 'Automated Testing' },
+  { title: 'API Testing in JavaScript', issuer: 'Test Automation University', pdfSrc: '/certs/tau-api-testing-javascript-cert.pdf', category: 'Automated Testing' },
   { title: 'UI Automation with WebdriverIO v7', issuer: 'Test Automation University', pdfSrc: '/certs/tau-webdriverio-cert.pdf', category: 'Automated Testing' },
   { title: 'Cucumber with JavaScript', issuer: 'Test Automation University', pdfSrc: '/certs/tau-cucumber-javascript-cert.pdf', category: 'Automated Testing' },
   { title: 'Learn JavaScript Unit Testing', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-unit-testing-cert.pdf', category: 'Automated Testing' },
@@ -29,7 +31,7 @@ const About = () => {
     { icon: Code, value: '2+', label: 'Years Experience Frontend' },
     { icon: Users, value: '10+', label: 'Projects Completed' },
     { icon: Code, value: '1+', label: 'Years Experience QA Engineer' },
-    { icon: Award, value: '14', label: 'Professional Certifications', isCertificateCard: true }
+    { icon: Award, value: '16', label: 'Professional Certifications', isCertificateCard: true }
   ];
   
   
