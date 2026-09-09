@@ -1,11 +1,11 @@
 import { Award, ExternalLink, X } from 'lucide-react';
 
 const issuerLogos: Record<string, string> = {
-  EPAM: '/images/certificate-epam.svg',
+  EPAM: '/images/certificate-epam.png',
   Udemy: '/images/certificate-udemy.svg',
-  'TBC Academy': '/images/certificate-tbc-academy.svg',
-  Scrimba: '/images/certificate-scrimba.svg',
-  Codecademy: '/images/certificate-codecademy.svg',
+  'TBC Academy': '/images/certificate-tbc-academy.png',
+  Scrimba: '/images/certificate-scrimba.png',
+  Codecademy: '/images/certificate-codecademy.png',
   'Test Automation University': '/images/certificate-tau.svg',
 };
 
