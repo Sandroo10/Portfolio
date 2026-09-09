@@ -1,5 +1,14 @@
 import { Award, ExternalLink, X } from 'lucide-react';
 
+const issuerLogos: Record<string, string> = {
+  EPAM: '/images/certificate-epam.svg',
+  Udemy: '/images/certificate-udemy.svg',
+  'TBC Academy': '/images/certificate-tbc-academy.svg',
+  Scrimba: '/images/certificate-scrimba.svg',
+  Codecademy: '/images/certificate-codecademy.svg',
+  'Test Automation University': '/images/certificate-tau.svg',
+};
+
 export type Certificate = {
   title: string;
   issuer: string;
@@ -64,9 +73,24 @@ const CertificationListModal = ({
                     onClick={() => onOpenCertificate(certificate)}
                     className="group flex items-center justify-between rounded-xl border border-border bg-muted/40 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-amber-500/60 hover:bg-amber-500/10 hover:shadow-lg"
                   >
-                    <span>
-                      <span className="block font-semibold text-foreground">{certificate.title}</span>
-                      <span className="mt-1 block text-sm text-muted-foreground">{certificate.issuer}</span>
+                    <span className="flex min-w-0 items-center gap-3">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-background p-1.5">
+                        {issuerLogos[certificate.issuer] ? (
+                          <img
+                            src={issuerLogos[certificate.issuer]}
+                            alt={`${certificate.issuer} logo`}
+                            className="h-full w-full object-contain"
+                          />
+                        ) : (
+                          <span className="text-xs font-bold text-amber-600" aria-hidden="true">
+                            {certificate.issuer.slice(0, 2).toUpperCase()}
+                          </span>
+                        )}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block font-semibold text-foreground">{certificate.title}</span>
+                        <span className="mt-1 block text-sm text-muted-foreground">{certificate.issuer}</span>
+                      </span>
                     </span>
                     <ExternalLink className="ml-3 h-5 w-5 shrink-0 text-amber-600 transition-transform group-hover:scale-110 dark:text-amber-300" />
                   </button>
