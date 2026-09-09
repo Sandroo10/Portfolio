@@ -113,7 +113,7 @@ const TimelineItem = ({
 const Timeline = () => {
   return (
     <div className="w-full max-w-4xl mx-auto p-7 pt-0">
-      <Tabs defaultValue="education" className="w-full">
+      <Tabs defaultValue="work" className="w-full">
         <TabsList className="flex justify-center mb-6 gap-4">
 
             <TabsTrigger
