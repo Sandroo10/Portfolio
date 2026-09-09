@@ -14,6 +14,7 @@ const certificates: Certificate[] = [
   { title: 'Create a Front-End App with React', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-create-react-app-cert.pdf', category: 'Frontend' },
   { title: 'Learn TypeScript', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-typescript-cert.pdf', category: 'Frontend' },
   { title: 'Learn JavaScript: Asynchronous Programming', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-asynchronous-programming-cert.pdf', category: 'Frontend' },
+  { title: 'Automated Testing in JavaScript', issuer: 'EPAM', pdfSrc: '/certs/epam-automated-testing-javascript-cert.pdf', category: 'Automated Testing' },
   { title: 'Learn WebdriverIO', issuer: 'Codecademy', pdfSrc: '/certs/codecademy-webdriverio-cert.pdf', category: 'Automated Testing' },
   { title: 'Advanced Playwright', issuer: 'Test Automation University', pdfSrc: '/certs/tau-advanced-playwright-cert.pdf', category: 'Automated Testing' },
   { title: 'API Test Automation with Postman', issuer: 'Test Automation University', pdfSrc: '/certs/tau-postman-api-test-automation.pdf', category: 'Automated Testing' },
@@ -31,7 +32,7 @@ const About = () => {
     { icon: Code, value: '2+', label: 'Years Experience Frontend' },
     { icon: Users, value: '10+', label: 'Projects Completed' },
     { icon: Code, value: '1+', label: 'Years Experience QA Engineer' },
-    { icon: Award, value: '16', label: 'Professional Certifications', isCertificateCard: true }
+    { icon: Award, value: '17', label: 'Professional Certifications', isCertificateCard: true }
   ];
   
   
@@ -61,7 +62,7 @@ const About = () => {
                   onClick={() => setShowCertifications(true)}
                   className="font-semibold text-amber-600 underline decoration-2 underline-offset-4 transition-colors hover:text-amber-500 dark:text-amber-300 dark:hover:text-amber-200"
                 >
-                  {' '}Udemy, TBC Academy, and other professional certification courses
+                  {' '}EPAM, Udemy, TBC Academy, and other professional certification courses
                 </button>.
               </p>
 
