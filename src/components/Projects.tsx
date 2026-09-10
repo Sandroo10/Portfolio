@@ -82,6 +82,16 @@ const Projects = () => {
       isFeatured: true,
     },
     {
+      title: 'API Testing in JavaScript Practice',
+      description: 'A focused API testing practice project using Axios for HTTP requests and Cucumber for readable, behaviour-driven scenarios. It demonstrates structured API checks, reusable step definitions, and JavaScript-based test automation.',
+      image: '/svgs/axios.svg',
+      imageFit: 'contain',
+      technologies: ['Axios', 'Cucumber', 'JavaScript', 'API Testing'],
+      categories: ['QA', 'Backend'],
+      githubUrl: 'https://github.com/Sandroo10/API-Testing-in-JS-practice',
+      isFeatured: true,
+    },
+    {
       title: 'Marionette MusicBox (Website + Discord Bot)',
       description: 'A FNAF-inspired showcase website for Marionette MusicBox, paired with a working Discord music bot. The bot supports slash commands, per-server queues, and YouTube playback.',
       image: '/images/Marionette-MusicBox.png',
