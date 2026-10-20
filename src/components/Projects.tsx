@@ -1,124 +1,11 @@
 import { ExternalLink, Github, Star } from 'lucide-react';
 import { useState } from 'react';
 
-type ProjectCategory = 'Frontend' | 'QA' | 'Backend';
-
-type Project = {
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  categories: ProjectCategory[];
-  githubUrl: string;
-  liveUrl?: string;
-  imageClassName?: string;
-  imageFit?: 'contain';
-  isFeatured?: boolean;
-};
+import { projects, type ProjectCategory } from '../data/projects';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | 'All'>('All');
   const filters: Array<ProjectCategory | 'All'> = ['All', 'Frontend', 'QA', 'Backend'];
-
-  const projects: Project[] = [
-    {
-      title: 'EvCarCharger',
-      description: 'My best project by far as a freelancer. Has Supabase, payment systems integration and deployed for usage and with scores of 100 SEO, 95+ in perfromance, acccessebilty and best practices.(Private Repo)',
-      image: '/images/EvCarCharger.webp',
-      technologies: ['React', 'Supabase', 'Resend', 'Bog Payment'],
-      categories: ['Frontend', 'Backend'],
-      liveUrl: 'https://evcarcharger.ge',
-      githubUrl: 'https://github.com/Sandroo10?tab=repositories',
-      isFeatured: true,
-    },
-    {
-      title: 'KIU re-make Website',
-      description: 'I participated in KIU re-make website contest and this is the website me and my teammate made. I was chosen as the Co-winner and am working on new website.',
-      image: '/images/KIU.webp',
-      technologies: ['React','Express', 'Chatbot', 'Tailwind', 'FormSpree', 'Vercel'],
-      categories: ['Frontend'],
-      liveUrl: 'https://kiu-website.vercel.app/en',
-      githubUrl: 'https://github.com/Mosa-5/Kiu_website',
-      isFeatured: true,
-    },
-    {
-      title: 'RetailMax (Final for TBC Academy Project) *Updated*',
-      description: 'A project that was done in 2 days while I had finals. still rough design but updated as well as new code structure, supabase for backend and database. working cart + login functionality. ',
-      image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
-      imageClassName: 'scale-110',
-      technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
-      categories: ['Frontend', 'Backend'],
-      liveUrl: 'https://retail-max.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/RetailMax',
-      isFeatured: true,
-    },
-    {
-      title: 'WebdriverIO Practice',
-      description: 'A focused WebdriverIO test automation practice project with browser-based test scenarios. This repository contains tests only, with no hosted application.',
-      image: '/svgs/webdriverio.svg',
-      imageFit: 'contain',
-      technologies: ['WebdriverIO', 'JavaScript', 'Automated Testing'],
-      categories: ['QA'],
-      githubUrl: 'https://github.com/Sandroo10/WebDriverIO-practice',
-      isFeatured: true,
-    },
-    {
-      title: 'Playwright Practice',
-      description: 'A professional Playwright automation project built around SauceDemo, covering authentication, inventory, sorting, cart management, checkout, and purchase validation. It uses TypeScript, Page Object Model, reusable fixtures, multi-browser testing, CI with GitHub Actions, HTML reports, screenshots, traces, and automated type-checking—demonstrating maintainable, reliable end-to-end test architecture.',
-      image: '/svgs/playwright.svg',
-      imageFit: 'contain',
-      technologies: ['Playwright', 'TypeScript', 'End-to-End Testing'],
-      categories: ['QA'],
-      githubUrl: 'https://github.com/Sandroo10/PlayWright-Practice',
-      isFeatured: true,
-    },
-    {
-      title: 'Advanced Playwright Banking Practice (In Progress)',
-      description: 'An in-progress Playwright and TypeScript test automation project for a demo banking interface. It focuses on building reliable end-to-end coverage for core user journeys while practicing scalable test organisation and browser automation patterns.',
-      image: '/images/advanced-playwright-banking-practice.png',
-      technologies: ['Playwright', 'TypeScript', 'End-to-End Testing'],
-      categories: ['QA'],
-      githubUrl: 'https://github.com/Sandroo10/Advanced-Playwright-Banking-Practice',
-      isFeatured: true,
-    },
-    {
-      title: 'API Testing in JavaScript Practice',
-      description: 'A focused API testing practice project using Axios for HTTP requests and Cucumber for readable, behaviour-driven scenarios. It demonstrates structured API checks, reusable step definitions, and JavaScript-based test automation.',
-      image: '/svgs/axios.svg',
-      imageFit: 'contain',
-      technologies: ['Axios', 'Cucumber', 'JavaScript', 'API Testing'],
-      categories: ['QA', 'Backend'],
-      githubUrl: 'https://github.com/Sandroo10/API-Testing-in-JS-practice',
-      isFeatured: true,
-    },
-    {
-      title: 'Marionette MusicBox (Website + Discord Bot)',
-      description: 'A FNAF-inspired showcase website for Marionette MusicBox, paired with a working Discord music bot. The bot supports slash commands, per-server queues, and YouTube playback.',
-      image: '/images/Marionette-MusicBox.png',
-      technologies: ['React', 'TypeScript', 'Tailwind', 'Discord.js', 'Node.js'],
-      categories: ['Frontend', 'Backend'],
-      liveUrl: 'https://marionette-discordbot.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/MarionetteBotShowcase'
-    },
-    {
-      title: 'Metro Echoes (Frontend + Backend + Testing)',
-      description: 'This is a fan-made concept Artyom metro 2033 chatbot that I made for fun. It is built in React and Express and uses HuggingFace API to generate responses. It also has a testing suite built in Jest and React Testing Library.',
-      image: '/images/Artyom.webp',
-      technologies: ['Next.js','Express', 'Chatbot', 'Tailwind', 'Jest', 'Vercel'],
-      categories: ['Frontend', 'Backend'],
-      liveUrl: 'https://artyom-chatbot.vercel.app/',
-      githubUrl: 'https://github.com/Sandroo10/ArtyomChatbot'
-    },
-    {
-      title: '.Net WebServerApp',
-      description: 'Small webserver application that I designed in .Net very raw but great test for learning.',
-      image: '/images/WebApp.webp',
-      technologies: ['HTML', '.NET', 'WebServer', 'C#'],
-      categories: ['Backend'],
-      githubUrl: 'https://github.com/Sandroo10/ProjectWebServerApp'
-    },
-  ];
-
   const visibleProjects = activeFilter === 'All'
     ? projects
     : projects.filter((project) => project.categories.includes(activeFilter));
@@ -157,7 +44,7 @@ const Projects = () => {
           {visibleProjects.map((project) => (
             <div
               key={project.title}
-              className="relative flex h-auto flex-col overflow-hidden rounded-2xl border bordernew bg-background shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl sm:h-[520px]"
+              className="relative flex h-auto flex-col overflow-hidden rounded-2xl border bordernew bg-background shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
             >
             {project.isFeatured && (
               <div
@@ -197,7 +84,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex space-x-4">
+                <div className="relative z-10 mt-auto flex flex-wrap gap-4">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
