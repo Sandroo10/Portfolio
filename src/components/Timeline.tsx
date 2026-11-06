@@ -32,9 +32,15 @@ const educationData = [
 
 const workData = [
   {
+    title: "Full-Stack Developer",
+    location: "Freelance - GenoFit",
+    date: "2026 Sep - Nov (2 months)",
+    icon: Briefcase,
+  },
+  {
     title: "QA Automation Engineer",
     location: "Full time - Nugios Systems",
-    date: "2025 Aug - Present",
+    date: "2025 Aug - 2026 Sep",
     logo: "/images/nugios-logo.png",
     logoAlt: "Nugios Systems logo",
   },

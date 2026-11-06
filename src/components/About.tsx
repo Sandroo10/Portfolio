@@ -49,7 +49,7 @@ const About = () => {
           <p className="text-xl text-muted-foreground">Quick Introduction</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-[1.1fr_1fr] gap-12 sm:h-[590px]">
+        <div className="grid grid-cols-1 sm:grid-cols-[1.1fr_1fr] gap-12">
           <Timeline />
           <div>
             <div className="prose prose-lg max-w-none mb-10">

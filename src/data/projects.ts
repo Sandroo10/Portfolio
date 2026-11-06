@@ -16,21 +16,20 @@ export type Project = {
 export const projects: Project[] = [
     {
       title: 'GenoFit',
-      description: 'Developed a website for GenoFit, presenting software testing services for businesses and QA training for individuals, with sections for its academy, QA Bridge, testimonials, and contact.',
+      description: 'Freelance full-stack development for GenoFit, a website presenting software testing services and QA training, including its academy, QA Bridge, testimonials, and contact information.',
       image: '/images/genofit.png',
       technologies: ['Web Development', 'QA Services', 'Training'],
-      categories: ['Frontend'],
+      categories: ['Frontend', 'Backend', 'QA'],
       liveUrl: 'https://www.genofit.tech/',
       isFeatured: true,
     },
     {
       title: 'EvCarCharger',
-      description: 'My best project by far as a freelancer. Has Supabase, payment systems integration and deployed for usage and with scores of 100 SEO, 95+ in perfromance, acccessebilty and best practices.(Private Repo)',
+      description: 'A freelance e-commerce website for EV charging products, built with React and Supabase, with payment and email integrations.',
       image: '/images/EvCarCharger.webp',
       technologies: ['React', 'Supabase', 'Resend', 'Bog Payment'],
       categories: ['Frontend', 'Backend'],
       liveUrl: 'https://evcarcharger.ge',
-      githubUrl: 'https://github.com/Sandroo10?tab=repositories',
       isFeatured: true,
     },
     {
