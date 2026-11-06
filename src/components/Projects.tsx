@@ -97,7 +97,7 @@ const Projects = () => {
                     </a>
                   )}
                   
-                  <a
+                  {project.githubUrl ? <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -105,7 +105,7 @@ const Projects = () => {
                   >
                     <Github className="w-2.5 h-2.5 sm:w-5 sm:h-5" />
                     <span>GitHub</span>
-                  </a>
+                  </a> : <span className="flex items-center px-4 py-2 text-sm text-muted-foreground">Private repository</span>}
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ export type Project = {
   image: string;
   technologies: string[];
   categories: ProjectCategory[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   imageClassName?: string;
   imageFit?: 'contain';
@@ -14,6 +14,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+    {
+      title: 'GenoFit',
+      description: 'Developed a website for GenoFit, presenting software testing services for businesses and QA training for individuals, with sections for its academy, QA Bridge, testimonials, and contact.',
+      image: '/images/genofit.png',
+      technologies: ['Web Development', 'QA Services', 'Training'],
+      categories: ['Frontend'],
+      liveUrl: 'https://www.genofit.tech/',
+      isFeatured: true,
+    },
     {
       title: 'EvCarCharger',
       description: 'My best project by far as a freelancer. Has Supabase, payment systems integration and deployed for usage and with scores of 100 SEO, 95+ in perfromance, acccessebilty and best practices.(Private Repo)',
@@ -113,5 +122,5 @@ export const projects: Project[] = [
     },
   ];
 
-export const projectSlug = (project: Project) => project.githubUrl.split('/').pop()?.split('?')[0] || 'project';
+export const projectSlug = (project: Project) => project.githubUrl?.split('/').pop()?.split('?')[0] || 'project';
 
