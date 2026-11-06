@@ -15,8 +15,8 @@ export type Project = {
 
 export const projects: Project[] = [
     {
-      title: 'GenoFit',
-      description: 'Freelance full-stack development for GenoFit, a website presenting software testing services and QA training, including its academy, QA Bridge, testimonials, and contact information.',
+      title: 'GenOfIT',
+      description: 'Freelance full-stack development for GenOfIT, a website presenting software testing services and QA training, including its academy, QA Bridge, testimonials, and contact information.',
       image: '/images/genofit.png',
       technologies: ['Web Development', 'QA Services', 'Training'],
       categories: ['Frontend', 'Backend', 'QA'],

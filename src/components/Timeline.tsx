@@ -33,9 +33,10 @@ const educationData = [
 const workData = [
   {
     title: "Full-Stack Developer",
-    location: "Freelance - GenoFit",
-    date: "2026 Sep - Nov (2 months)",
-    icon: Briefcase,
+    location: "Freelance - GenOfIT",
+    date: "2026 Sep - 2026 Nov",
+    logo: "/images/GenofitLogo.png",
+    logoAlt: "GenOfIT logo",
   },
   {
     title: "QA Automation Engineer",
