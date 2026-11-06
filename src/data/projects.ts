@@ -16,9 +16,9 @@ export type Project = {
 export const projects: Project[] = [
     {
       title: 'GenOfIT',
-      description: 'Freelance full-stack development for GenOfIT, a website presenting software testing services and QA training, including its academy, QA Bridge, testimonials, and contact information.',
+      description: 'Freelance full-stack development for GenOfIT, A responsive platform for a software testing and QA training company, featuring course enrollment, an admin panel, Stripe payments, Supabase-backed content and order management, and automated emails, testing, and deployment.',
       image: '/images/genofit.png',
-      technologies: ['Web Development', 'QA Services', 'Training'],
+      technologies: ['Next.js', 'Supabase', 'Stripe', 'Resend', 'Google Search Console', 'Cloudflare'],
       categories: ['Frontend', 'Backend', 'QA'],
       liveUrl: 'https://www.genofit.tech/',
       isFeatured: true,
