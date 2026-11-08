@@ -2,6 +2,7 @@ import { ExternalLink, Github, Star } from 'lucide-react';
 import { useState } from 'react';
 
 import { projects, type ProjectCategory } from '../data/projects';
+import { qaStudies } from '../data/qa-case-studies';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | 'All'>('All');
@@ -55,6 +56,7 @@ const Projects = () => {
               </div>
 
             )}  
+              {Object.entries(qaStudies).filter(([,study]) => project.githubUrl === `https://github.com/${study.repo.includes('/') ? study.repo : `Sandroo10/${study.repo}`}`).map(([slug]) => <a key={slug} href={`#/projects/${slug}`} aria-label={`Read ${project.title} case study`} className="absolute inset-0 z-[1] focus-visible:outline-2 focus-visible:outline-blue-500" />)}
               <div className="h-48 relative shrink-0 overflow-hidden">
                 <img
                   src={project.image}
@@ -66,7 +68,7 @@ const Projects = () => {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="mb-3 min-h-14 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-blue-600">
-                  {project.title}
+                  {project.liveUrl === 'https://marionette-discordbot.vercel.app/' ? <a href="#/projects/marionette" className="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-blue-500">{project.title}</a> : project.liveUrl === 'https://evcarcharger.ge' ? <a href="#/projects/evcarcharger" className="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-blue-500">{project.title}</a> : project.liveUrl === 'https://www.genofit.tech/' || project.githubUrl === 'https://github.com/Sandroo10/Movie-Website' ? <a href={project.liveUrl === 'https://www.genofit.tech/' ? '#/projects/genofit' : '#/projects/kinoxii'} className="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-blue-500">{project.title}</a> : project.title}
                 </h3>
                 
                 <p className="mb-4 min-h-24 text-xs leading-relaxed text-muted-foreground sm:h-24 sm:overflow-hidden sm:text-sm">

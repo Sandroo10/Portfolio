@@ -103,8 +103,7 @@ export const projects: Project[] = [
     {
       title: 'RetailMax (Final for TBC Academy Project) *Updated*',
       description: 'A project that was done in 2 days while I had finals. still rough design but updated as well as new code structure, supabase for backend and database. working cart + login functionality. ',
-      image: 'https://di2ponv0v5otw.cloudfront.net/shows/2024/03/09/9/m_65ec9e82849fc2e041077792.png',
-      imageClassName: 'scale-110',
+      image: '/images/retailmax-preview.png',
       technologies: ['React', 'Tailwind', 'Supabase', 'ShadCn'],
       categories: ['Frontend', 'Backend'],
       liveUrl: 'https://retail-max.vercel.app/',
